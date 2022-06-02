@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block content %}
+	{% for member in members %}
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">{{ member.name }}</h5>
+			<p class="card-text">
+				使用者帳號
+			</p>
+			<a href="/admin/login/members/{{ member.id }}/change/" class="card-link">Edit</a>
+			<a href="/admin/login/members/{{ member.id }}/delete/" class="card-link">Delete</a>
+		</div>
+	</div>
+	{% endfor %}
+	<div>
+		<a href="/logout/" class="text-success "><ins>登出</ins></a>
+	</div>
+{% endblock %}
